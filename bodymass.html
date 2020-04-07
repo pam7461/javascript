@@ -20,6 +20,8 @@
     input::placeholder{text-align:right;color:rgba(255,0,0,0.5);padding-right:10px;}
 
     .button{text-align:center}
+
+    .panjung{padding:30px;text-align:center;}
   </style>
 </head>
 <body>
@@ -56,7 +58,10 @@
     <button id="send" onclick="bmiCalc();">계산하기</button>
     <button id="reset" onclick="bmiReset();">다시하기</button>
   </div>
-  
+  <div class="panjung">
+
+  </div>
+
   <script>
     // BMI지수= 몸무게(kg) ÷ (신장(m) × 신장(m))
     // 25이하 정상,25초과 정상초과
@@ -69,7 +74,11 @@
       key/=100;
       bmi=mom / (key**2);
       panjung=bmi<=25?'정상':'정상초과';
-      document.write('당신의 체질량지수 측정결과는 '+panjung+'입니다.');
+
+      var outPut=document.querySelector('.panjung');
+      outPut.innerHTML='당신의 체질량지수 측정결과는 <b>'+panjung+'</b>입니다.';      
+      // outPut.innerText='당신의 체질량지수 측정결과는 <b>'+panjung+'</b>입니다.';
+      // document.write('당신의 체질량지수 측정결과는 '+panjung+'입니다.');
     }
     // alert('당신의 체질량지수 결과는 ' + panjung + '입니다.');
 
