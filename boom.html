@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>폭탄</title>
+  <style>
+    div{font-size:150px;color:red;text-align:center;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);}
+    img{width:50%;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+      display:none;
+    }
+  </style>
+</head>
+<body>
+  <div id="div">10초</div>
+  <img id="img" src="images/boom.png" alt="img01">
+</body>
+  <script>
+    cnt=10;
+    var tmp=setInterval(
+      function(){
+        if(cnt==1){
+          document.getElementById('div').style.display='none';
+          clearInterval(tmp);
+        }
+        cnt--;
+        console.log(cnt);
+        document.getElementById('div').innerText=cnt+'초';
+
+      }
+      ,1000);
+    setTimeout(
+      function(){
+        document.getElementById('img').style.display='block';
+      }  
+    ,10000);
+  </script>
+</html>
