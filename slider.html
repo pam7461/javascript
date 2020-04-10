@@ -30,8 +30,18 @@
 <script>
   var cnt=1;
   var tmp=document.getElementsByClassName('images');
-  for(var i=0;i<tmp.length;i++){
-    console.log(tmp[i]);
-  }
+  setInterval(function(){
+    for(var i=0;i<tmp.length;i++){
+      tmp[i].style.display='none';
+    }
+    tmp[cnt].style.display='block';
+    if(cnt==tmp.length-1){
+      cnt=0;
+    }else{
+      cnt++;
+    }
+  },3000);
+
+  
 </script>
 </html>
