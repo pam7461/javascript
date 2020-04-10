@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반복실행</title>
+</head>
+<body>
+  <h1>값 출력</h1>
+  <input type="button" value="시작" onclick="startNum();">
+  <input type="button" value="멈춤" onclick="stopNum();">
+</body>
+  <script>
+    // 전역변수
+    var tmp;
+
+    function startNum(){
+      var cnt=0;
+      tmp=setInterval(
+        function(){
+          window.open('popup.html','pop','width=300,height=300,left=300,top=300');
+        }
+        ,6000);
+    }
+
+    function stopNum(){
+      clearInterval(tmp);
+    }
+  </script>
+</html>

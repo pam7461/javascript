@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>99단</title>
+  <style>
+    body{display:flex;flex-flow:row wrap;}
+    h1{width:100%;text-align:center;margin:20px 0 10px;border-top:1px solid black;}
+    h1:first-of-type{border:none;}
+    p{width:33.33333333333333%;text-align:center;margin:0;}
+  </style>
+</head>
+<body>
+  
+</body>
+<script>
+  var mul;
+  for(var cnt=2;cnt<=9;cnt++){
+    document.write('<h1>'+cnt+'단</h1>');
+    for(var i=1;i<=9;i++){
+      mul=cnt*i;
+      document.write('<p>'+cnt+'*'+i+'='+mul+'</p>');
+    }
+  }
+</script>
+</html>

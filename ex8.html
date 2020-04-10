@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>성별판정</title>
+  <style>
+    body{margin:0;}
+    div{position:fixed;left:0;top:0;width:100%;height:100%;background:black;display:none;}
+    p{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:50%;height:50%;background:white;}
+  </style>
+</head>
+<body>
+  <!-- 입력폼 -->
+  <input type="radio" name="sex" id="man">
+  <label for="man">남성</label>
+  <input type="radio" name="sex" id="girl">
+  <label for="girl">여성</label>
+  <input type="button" value="확인" onclick="pro();">
+ 
+  <!-- 출력폼 -->
+  <div></div>
+    <p onclick="closeWindow();"></p>
+    
+  </div>
+</body>
+<script>
+  function pro(){
+    var man,girl,sex;
+    man=document.querySelector('#man').checked;
+    girl=document.querySelector('#girl').checked;
+    if(man){
+      sex='남성';
+    }else if(girl){
+      sex='여성';
+    }else{
+      sex='먼저 성별을 선택해 주세요';
+    }
+    document.querySelector('div').style.display='block';
+    document.querySelector('p').innerHTML=sex;
+  }
+  function closeWindow(){
+    document.querySelector('div').style.display='none';
+    document.querySelector('p').style.display='none';
+  }
+</script>
+</html>

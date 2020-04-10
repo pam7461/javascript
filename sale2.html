@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>판매현황시스템</title>
+  <style>
+    .wrap{width:800px;margin:0 auto;border:4px double black;border-left:none;border-right:none;padding:0 20px;}
+
+    h1,h2{text-align:center;}
+
+    #sec01>form{display:flex;flex-flow:row wrap;height:150px;padding-top:20px;}
+    #sec01>form>div{width:50%;}
+    #sec01>form>div:last-child{width:100%;text-align:center;}
+    #sec01 button{padding:10px 20px;background-color:lightgreen;border:1px solid darkgreen;color:white;font-weight:bolder;font-size:18px;}
+
+    hr{margin:20px 0 30px;}
+
+    #sec02 p{font-size:18px;}
+  </style>
+
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>판매현황 시스템</h1>
+    </header>
+
+    <!-- 입력섹션 -->
+    <section id="sec01">
+      <h2>2019년 분기별 판매현황</h2>
+      <form>
+        <div>
+          <label for="quarter01">1분기 판매수량</label>
+          <input type="text" name="quarter" id="quarter01">
+        </div>
+        <div>
+          <label for="quarter02">2분기 판매수량</label>
+          <input type="text" name="quarter" id="quarter02">
+        </div>
+        <div>
+          <label for="quarter03">3분기 판매수량</label>
+          <input type="text" name="quarter" id="quarter03">
+        </div>
+        <div>
+          <label for="quarter04">4분기 판매수량</label>
+          <input type="text" name="quarter" id="quarter04">
+        </div>
+        <div>
+          <button type="button" onclick="processData();">전송</button>
+          <button type="reset">리셋</button>
+        </div>
+      </form>
+    </section>
+
+    <hr>
+
+    <!-- 출력섹션 -->
+    <section id="sec02">
+      <h2>2019년 판매현황 분석</h2>
+      <p id="output01"></p>
+      <p id="output02"></p>
+    </section>
+  </div>
+
+</body>
+<script>
+  function processData(){
+    // 입력
+    var quar01,quar02,quar03,quar04;
+    quar01=document.querySelector('#quarter01').value;
+    quar02=document.querySelector('#quarter02').value;
+    quar03=document.querySelector('#quarter03').value;
+    quar04=document.querySelector('#quarter04').value;
+  
+    // 처리
+    var info01,info02,info03;
+    info01=(quar01*1+quar02*1+quar03*1+quar04*1)/4;
+    info02=info01-1100;
+    info03=info01>=1100?'상승':'하락';
+
+    // 출력
+    var out01,out02;
+    out01=document.querySelector('#output01');
+    out02=document.querySelector('#output02');
+
+    out01.innerHTML='2019년 판매량 평균은 '+info01+'입니다.';
+    out02.innerHTML='판매량 평균은 전년대비 '+info02+'개 '+info03+'하였습니다.';
+  }
+   
+</script>
+</html>

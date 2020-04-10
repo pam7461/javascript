@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>선택문(switch)</title>
+</head>
+<body>
+  
+</body>
+<script>
+  var inData=prompt('네이버, 다음, 구글중 어느 포털을 가장 많이 사용하세요');
+  // document.write(inData);
+
+  var outData;
+  switch(inData){
+    case '네이버':
+      outData='네이버를 좋아하시는군요';
+      break;
+
+    case '다음':
+      outData='다음은 카카오로 사명이 변경되었습니다.';
+      break;
+
+    case '구글':
+      outData='세계4대 종교중 하나죠!';
+      break;
+
+    default:
+      outData='도대체 어떤것을 사용하세요?'
+      break;
+  }
+  // if(inData>=90){
+  //   outData='수';
+  // }else if(inData>=80){
+  //   outData='우';
+  // }else if(inData>=70){
+  //   outData='미';
+  // }else if(inData>=60){
+  //   outData='양';
+  // }else{
+  //   outData='가';
+  // }
+
+  document.write(outData);
+</script>
+
+</html>

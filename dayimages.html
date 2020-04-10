@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>날짜별 배경이미지</title>
+</head>
+<body>
+  <p>1일 / 6일 => 이미지1</p>
+  <p>2일 / 7일 => 이미지2</p>
+  <p>3일 / 8일 => 이미지3</p>
+  <p>4일 / 9일 => 이미지4</p>
+  <p>5일 / 10일 => 이미지5</p>
+  
+</body>
+<script>
+  var userDate=new Date(2020,1,5);
+  var userDay=userDate.getDate();
+  userDay=userDay%5;
+  if(userDay==0){
+    userDay=5;
+  }
+  document.querySelector('body').style.backgroundImage='url(images/img_00'+userDay+'.jpg)';
+  
+</script>
+</html>

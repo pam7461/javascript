@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원가입</title>
+</head>
+<body>
+  <p>아이디는 반드시 이메일 형식으로 입력하세요</p>
+  <p>예)pam7461@naver.com</p>
+  <input type="text" name="userid" id="userid" placeholder="id@email">
+  <button type="button" onclick="join();">가입</button>
+  <button type="button">취소</button>
+</body>
+<script>
+  function join(){
+    var eMail=document.querySelector('#userid').value;
+    var tmp=eMail.indexOf('@');
+    var tmp2=eMail.length;
+    
+    if(tmp<=0 || tmp==tmp2-1){
+      alert('아이디를 확인하세요');
+    }else{
+      alert('pam7461님 환영합니다.');
+    }
+  }
+  
+  
+</script>
+</html>

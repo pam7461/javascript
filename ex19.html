@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  var nowDate=new Date();
+  var nowYear=nowDate.getFullYear(),
+      nowMonth=nowDate.getMonth(),
+      nowDay=nowDate.getDate();
+  var nowDate2=new Date(nowYear,nowMonth,nowDay);
+  var birthDate=new Date(1973,3,6);
+
+  var diffDate=nowDate2-birthDate;
+  diffDate=diffDate/1000/24/60/60/365+1;
+  diffDate=Math.floor(diffDate);
+  console.log(diffDate);
+</script>
+</html>

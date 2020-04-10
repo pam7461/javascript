@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>제어문(Control)</title>
+</head>
+<body>
+  <input type="text" id="data">
+  <button type="button" onclick="process();">평가</button>
+  <input type="text" id="info">
+</body>
+<script>
+  function process(){
+    var iNum=document.querySelector('#data').value;
+
+    var hakjum;
+    if(iNum>=90){
+      hakjum='수';
+    }else if(iNum>=80){
+      hakjum='우';
+    }else if(iNum>=70){
+      hakjum='미';
+    }else if(iNum>=60){
+      hakjum='양';
+    }else{
+      hakjum='가';
+    }
+
+    var oInfo=document.querySelector('#info');
+    oInfo.value=hakjum;
+  }
+</script>
+</html>
