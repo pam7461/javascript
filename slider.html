@@ -8,13 +8,21 @@
     .wrap{width:800px;margin:0 auto;}
     .wrap>.banner>.img{position:relative;width:100%;height:200px;overflow:hidden;}
     .wrap>.banner>.img>img{position:absolute;left:50%;top:10%;transform:translate(-50%,-50%);width:100%;}
+    .images{display:none;}
+    .img01{display:block;}
+    .wrap>.banner>.img>input{position:absolute;left:50%;top:80%;transform:translate(-50%,-50%);z-index:10;}
   </style>
 </head>
 <body>
   <div class="wrap">
     <section class="section banner">
       <div class="img">
-        <img src="images/img_001.jpg" alt="img01">
+        <img class="images img01" src="images/img_001.jpg" alt="img01">
+        <img class="images img02" src="images/img_002.jpg" alt="img02">
+        <img class="images img03" src="images/img_003.jpg" alt="img03">
+        <img class="images img04" src="images/img_004.jpg" alt="img04">
+        <img class="images img05" src="images/img_005.jpg" alt="img05">
+        <input type="button" value="stop">
       </div>
     </section>
   </div>
